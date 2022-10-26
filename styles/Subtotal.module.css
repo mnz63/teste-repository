@@ -1,0 +1,38 @@
+.subtotal{
+    display: flex;
+    width: 54%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.subtotal__frete, .subtotal__total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+    box-sizing: border-box;
+}
+
+.subtotal__frete{
+    border-bottom: 2px solid #dfdfdf;
+}
+
+.subtotal__currency{
+    font-size: 1rem;
+}
+
+.subtotal__price{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.subtotal__price_green{
+    color: green;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.subtotal__currency_green{
+    color: green;
+    font-size: 1rem;
+}
