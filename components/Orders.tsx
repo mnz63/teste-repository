@@ -3,8 +3,15 @@ import Section from "./Section"
 import Product from "./Product"
 import { useState, useEffect } from 'react'
 
+interface IProduct  {
+    id: number,
+    name: string,
+    description: string,
+    price: number
+}
+
 export default function Orders(){
-    const [data, setData] = useState("")
+    const [data, setData]= useState<Array<IProduct>>()
     
     useEffect(() => {
         fetch('https://api-for-next.herokuapp.com/')
@@ -16,9 +23,15 @@ export default function Orders(){
 
     return(
         <div className={styles.orders}>
-            <Section sectionTitle="Meu pedido"/>
+            <Section title="Meu pedido"/>
             <div className={styles.products}>
-                {data && data.map(product=> <Product key={product.id} name={product.name} description={product.description} price={product.price}/> )}
+                {data && data.map((product: IProduct) => 
+                <Product 
+                id={product.id}
+                key={product.id}
+                name={product.name}
+                description={product.description} 
+                price={product.price}/>)}
             </div>
         </div>
     )

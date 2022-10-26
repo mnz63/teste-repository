@@ -1,6 +1,13 @@
 import styles from "../styles/Product.module.css"
 
-export default function Product(props){
+interface IProduct  {
+    id: number,
+    name: string,
+    description: string,
+    price: number
+}
+
+export default function Product(props: IProduct){
     return(
         <div className={styles.product}>
             <span className={styles.product__name}>{props.name}</span>

@@ -1,6 +1,7 @@
+import { Component } from "react"
 import styles from "../styles/Subtotal.module.css"
 
-export default function Subtotal (props){
+export default function Subtotal() {
     return (
         <div className={styles.subtotal}>
             <div className={styles.subtotal__frete}>

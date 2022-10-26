@@ -6,7 +6,7 @@ import Orders from '../components/Orders'
 import Subtotal from '../components/Subtotal'
 import Checkout from '../components/Checkout'
 
-export default function Home({res}) {
+export default function Home() {
   return (
     <div>
       <Logo/>

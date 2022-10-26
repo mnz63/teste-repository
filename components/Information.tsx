@@ -2,8 +2,14 @@ import Section from "./Section"
 import styles from "../styles/Information.module.css"
 import { useState, useEffect } from 'react'
 
-export default function Information(props){
-   const [data, setData] = useState("")
+interface IUser {
+    name: string,
+    address: string,
+    fone: string
+}
+
+export default function Information(){
+   const [data, setData] = useState<IUser>([])
     
     useEffect(() => {
         fetch('https://api-for-next.herokuapp.com/users')
@@ -16,12 +22,12 @@ export default function Information(props){
 
     return(
         <div className={styles.information}>
-            <Section sectionTitle="Minhas informações"/>
+            <Section title="Minhas informações"/>
             <div className={styles.information__data}>
                 <span>Nome:</span>
                 <p>{data.name}</p>
                 <span>Endereço:</span>
-                <p>{data.adress}</p>
+                <p>{data.address}</p>
                 <span>Telefone:</span>
                 <p>{data.fone}</p>
             </div>
